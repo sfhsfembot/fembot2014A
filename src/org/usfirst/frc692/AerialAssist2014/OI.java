@@ -70,6 +70,8 @@ public class OI {
         highShiftButton.whenPressed(new HighShift());
 	    
         // SmartDashboard Buttons
+        SmartDashboard.putData("MoveGathererDown", new MoveGathererDown());
+        SmartDashboard.putData("MoveGathererUp", new MoveGathererUp());
         SmartDashboard.putData("SpitOut", new SpitOut());
         SmartDashboard.putData("DriveForward", new DriveForward());
         SmartDashboard.putData("DriveWithTwoJoystick", new DriveWithTwoJoystick());
