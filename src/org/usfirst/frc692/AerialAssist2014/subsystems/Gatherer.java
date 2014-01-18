@@ -35,4 +35,92 @@ public class Gatherer extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    
+    public void gatherGo()
+    {
+        gathererMotor.set(1.0);
+    }
+    /*
+     * set the value to 1.0 so that the gatherer motor will turn clockwise
+     * EV 1/17/14
+     */
+    
+    public void gatherStop()
+    {
+        gathererMotor.set(0.0);
+    }
+    /*
+     * set the value to 0.0 so that the gatherer motor will stop
+     * EV 1/17/14
+     */
+    
+    public boolean isFrontGatherLimitPressed()
+    {
+        boolean a = frontGatherLimit.get();
+        return a;
+    }
+    /*
+     * if the front gather limit swtich is presed the statement will become true
+     * AO 1/17/14
+     */
+    
+    public boolean isFrontGatherLimitNotPressed()
+    {
+        boolean b = frontGatherLimit.get();
+        return !b;
+    }
+    /*
+     * if the front gather limit switch is not pressed the statement will not
+     * become true
+     * AO 1/17/14
+     */
+    
+    public boolean isBackGatherLimitPressed()
+    {
+        boolean c = backGatherLimit.get();
+        return c;
+    }
+    /*
+     * if the back gather limit switch is pressed the statement will become true
+     * AO 1/17/14
+     */
+    
+    public boolean isBackGatherLimitNotPressed()
+    {
+        boolean d = backGatherLimit.get();
+        return d;
+    }
+    /*
+     * if the back limit gather limit switch is pressed the staememt will become
+     * true
+     * AO 1/17/14
+     */
+    
+    public void gathererGoUp()
+    {
+        leftGatherShift.set(DoubleSolenoid.Value.kForward);
+        rightGatherShift.set(DoubleSolenoid.Value.kForward);
+    }
+    /*
+     * the right and left Double Solenoids of the gatherer 
+     * pushes air to the forward channel so that the gatherer will raise
+     * AO 1/17/14
+     */ 
+        
+    public void gathererGoDown()
+    {
+        leftGatherShift.set(DoubleSolenoid.Value.kReverse);
+        rightGatherShift.set(DoubleSolenoid.Value.kReverse);
+    }
+    /*
+     * the right and left double solenoids of the gatherr pushes air to the 
+     * forward channel so that the gahter will raise
+     * AO 1/17/14
+     */
+    
+    public void gathererAirStop()
+    {
+        leftGatherShift.set(DoubleSolenoid.Value.kOff);
+        rightGatherShift.set(DoubleSolenoid.Value.kOff);
+    }
 }
