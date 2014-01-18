@@ -28,7 +28,8 @@ public class RobotMap {
     public static DoubleSolenoid driveTrainleftShift;
     public static DoubleSolenoid driveTrainrightShift;
     public static SpeedController shootershooterMotor1;
-    public static DigitalInput shooterlimitSwitch;
+    public static DigitalInput shooterfrontLimitShooterSwitch;
+    public static DigitalInput shooterbackLimitShooterSwitch;
     public static DigitalInput gathererbackGatherLimit;
     public static DigitalInput gathererfrontGatherLimit;
     public static SpeedController gatherergathererMotor;
@@ -66,8 +67,11 @@ public class RobotMap {
         shootershooterMotor1 = new Victor(1, 5);
 	LiveWindow.addActuator("Shooter", "shooterMotor1", (Victor) shootershooterMotor1);
         
-        shooterlimitSwitch = new DigitalInput(1, 2);
-	LiveWindow.addSensor("Shooter", "limitSwitch", shooterlimitSwitch);
+        shooterfrontLimitShooterSwitch = new DigitalInput(1, 2);
+	LiveWindow.addSensor("Shooter", "frontLimitShooterSwitch", shooterfrontLimitShooterSwitch);
+        
+        shooterbackLimitShooterSwitch = new DigitalInput(1, 5);
+	LiveWindow.addSensor("Shooter", "backLimitShooterSwitch", shooterbackLimitShooterSwitch);
         
         gathererbackGatherLimit = new DigitalInput(1, 4);
 	LiveWindow.addSensor("Gatherer", "backGatherLimit", gathererbackGatherLimit);
