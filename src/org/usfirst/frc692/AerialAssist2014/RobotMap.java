@@ -10,6 +10,8 @@
 package org.usfirst.frc692.AerialAssist2014;
     
 import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.CounterBase.EncodingType;
+import edu.wpi.first.wpilibj.PIDSource.PIDSourceParameter;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import java.util.Vector;
 /**
@@ -26,7 +28,9 @@ public class RobotMap {
     public static SpeedController driveTrainrightDriveVictor2;
     public static RobotDrive driveTrainRobotDrive;
     public static DoubleSolenoid driveTrainleftShift;
+    public static Encoder driveTrainleftEncoder;
     public static DoubleSolenoid driveTrainrightShift;
+    public static Encoder driveTrainrightEncoder;
     public static SpeedController shootershooterMotor1;
     public static DigitalInput shooterfrontLimitShooterSwitch;
     public static DigitalInput shooterbackLimitShooterSwitch;
@@ -61,9 +65,19 @@ public class RobotMap {
         driveTrainleftShift = new DoubleSolenoid(1, 1, 2);      
 	
         
+        driveTrainleftEncoder = new Encoder(1, 6, 1, 7, false, EncodingType.k4X);
+	LiveWindow.addSensor("DriveTrain", "leftEncoder", driveTrainleftEncoder);
+        driveTrainleftEncoder.setDistancePerPulse(1.0);
+        driveTrainleftEncoder.setPIDSourceParameter(PIDSourceParameter.kRate);
+        driveTrainleftEncoder.start();
         driveTrainrightShift = new DoubleSolenoid(1, 3, 4);      
 	
         
+        driveTrainrightEncoder = new Encoder(1, 8, 1, 9, false, EncodingType.k4X);
+	LiveWindow.addSensor("DriveTrain", "rightEncoder", driveTrainrightEncoder);
+        driveTrainrightEncoder.setDistancePerPulse(1.0);
+        driveTrainrightEncoder.setPIDSourceParameter(PIDSourceParameter.kRate);
+        driveTrainrightEncoder.start();
         shootershooterMotor1 = new Victor(1, 5);
 	LiveWindow.addActuator("Shooter", "shooterMotor1", (Victor) shootershooterMotor1);
         
