@@ -12,7 +12,7 @@
 package org.usfirst.frc692.AerialAssist2014.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-/**
+/*
  *
  */
 public class GatherUpAndDown extends CommandGroup {
