@@ -12,9 +12,7 @@
 package org.usfirst.frc692.AerialAssist2014.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-/**
- *
- */
+
 public class AutonGroup extends CommandGroup {
     
     public  AutonGroup() {
@@ -36,7 +34,7 @@ public class AutonGroup extends CommandGroup {
         // arm.
         
         /*
-         * -Auton Planning for 2014-
+         * -Auton Planning for 2014
          * Shoot the ball into top goal
          * Move forward (5 feet?) -- about 216 in.
          * 
@@ -45,10 +43,18 @@ public class AutonGroup extends CommandGroup {
          * AC 1/20/14
          */
         
-        addSequential(new ShootForwardAndBack());
         //shoots the ball into the top goal
         //AC 1/20/14
         //addSequential(new AutonMoveForward());
         //AC 1/20/14
+        addSequential(new ShootForwardAndBack());
     }
+    /*
+     * - NOTES FOR DRIVING FORWARD IN AUTON -
+     * given 5 seconds to travel
+     * needed speed to travel into alliance zone = 34 RPM
+     * 1 revolution = 12 inches (because diameter of wheel is 4 in.)
+     * therefore, need 3 revolutions to travel 33 inches
+     * EV 1/23/14
+     */
 }
