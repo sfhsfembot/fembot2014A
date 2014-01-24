@@ -25,7 +25,14 @@ public class  AutonMoveForward extends Command {
     
     // Called just before this Command runs the first time
     protected void initialize() {
+       Robot.driveTrain.encoderStartCounting();
+       Robot.driveTrain.motorsForward();
     }
+    /*
+     * the system begins to intialize, the robot drive train encoder starts counting
+     * and the drive train motors move foreword
+     * AO 1/23/14
+     */
     
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
@@ -33,12 +40,34 @@ public class  AutonMoveForward extends Command {
     
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        if (Robot.driveTrain.bothLeftAndRightDistance() == 6.0)
+        {
+            return true;
+        }
+        /*
+         * if the robotdrive train' lefta and right distance equal 6.0 then the
+         * statement is true
+         * AO 1/23/14
+         */
+        else
+        {
+            return false;
+        }
+        /*
+         * if else then the statement is false
+         * AO 1/23/14
+         */
     }
     
     // Called once after isFinished returns true
     protected void end() {
+        Robot.driveTrain.encoderStopCounting();
+        Robot.driveTrain.stop();
     }
+    /*
+     * the robot drive train stops counting down and the drive train stops
+     * AO 1/23/14
+     */
     
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
