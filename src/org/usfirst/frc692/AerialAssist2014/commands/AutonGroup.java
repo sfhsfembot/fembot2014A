@@ -47,8 +47,14 @@ public class AutonGroup extends CommandGroup {
         //AC 1/20/14
         //addSequential(new AutonMoveForward());
         //AC 1/20/14
+        addSequential(new AutonMoveForward());
         addSequential(new ShootForwardAndBack());
     }
+    /*
+     * robot moves forward about 36 inches then shoots the ball
+     * AO 1/23/14
+     */
+    
     /*
      * - NOTES FOR DRIVING FORWARD IN AUTON -
      * given 5 seconds to travel
@@ -57,4 +63,5 @@ public class AutonGroup extends CommandGroup {
      * therefore, need 3 revolutions to travel 33 inches
      * EV 1/23/14
      */
+   
 }
