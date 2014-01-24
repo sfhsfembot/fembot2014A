@@ -12,6 +12,7 @@ import org.usfirst.frc692.AerialAssist2014.RobotMap;
 import org.usfirst.frc692.AerialAssist2014.commands.*;
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import org.usfirst.frc692.AerialAssist2014.Robot;
 /**
  *
  */
@@ -76,11 +77,51 @@ public class DriveTrain extends Subsystem {
     //pushes the piston down, putting soloniod into low gear
     //AO 1/11/14
     
-    public void takeDistance()
+    /*
+     * public double getLeftDistance()
     {
+        double leftDistance = leftEncoder.getDistance();
         //method will take distance in which the robot has travelled
         //AC 1/20/14
+        return leftDistance;
     }
     //takes distance the robot has travelled
     //AC 1/20/14
+    public double getRightDistance()
+    {
+        double rightDistance = rightEncoder.getDistance();
+        return rightDistance;
+    }
+    */
+    
+    public double bothLeftAndRightDistance()
+    {
+        double leftDistance = leftEncoder.getDistance();
+        double rightDistance = rightEncoder.getDistance();
+        System.out.println(leftDistance + rightDistance);
+        return leftDistance + rightDistance;
+    }
+    /*
+     * method will take distance in which the robot's left and right encoders 
+     * will get the distance and the system will print the added value to check
+     * the distance of the two encoders and then the system will add the left 
+     * and right distance together then the system will return the value
+     * AO 1/23/14
+     */
+    
+    public void encoderStartCounting()
+    {
+        leftEncoder.start();
+        rightEncoder.start();
+    }
+    //both left and right encoders will start counting revolutions
+    //AC 1/23/14
+    
+    public void encoderStopCounting()
+    {
+        leftEncoder.stop();
+        rightEncoder.stop();
+    }
+    //left and right encoders will stop counting revolutions
+    //AC 1/23/14
 }
