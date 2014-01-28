@@ -26,11 +26,17 @@ public class  MoveGathererUp extends Command {
     
     protected void initialize() {
         //Robot.gatherer.gatherGo();
+        Robot.gatherer.gathererGoUp();
+        Robot.gatherer.gatherMotorStop();
     }
+    /*
+     * gatherer will move up, then the gatherer motor will stop
+     * EV 1/27/14
+     */
     
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        if(Robot.gatherer.isBackGatherLimitNotPressed())
+        //if(Robot.gatherer.isBackGatherLimitNotPressed())
         {
             Robot.gatherer.gathererGoUp();
             //Robot.gatherer.gatherGo();
@@ -41,10 +47,10 @@ public class  MoveGathererUp extends Command {
          * the system will print out "Front limit is not pressed; the gatherer is moving forward"
          * AO 1/17/14
          */
-        else
-        {
-            System.out.println("Back limit is pressed.");
-        }
+        //else
+        //{
+        //    System.out.println("Back limit is pressed.");
+        //}
         /*
          * if the back gather limit switch is not pressed
          * the system will print out "Gatherer is not moving"
@@ -54,7 +60,8 @@ public class  MoveGathererUp extends Command {
     
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(Robot.gatherer.isBackGatherLimitPressed())
+        return true;
+        /*if(Robot.gatherer.isBackGatherLimitPressed())
         {
             System.out.println("Back gather limit is pressed.");
             return true;
@@ -65,7 +72,7 @@ public class  MoveGathererUp extends Command {
          * out true
          * AO 1/17/14
          */
-        else
+        /*else
         {
             return false;
         }
@@ -78,8 +85,8 @@ public class  MoveGathererUp extends Command {
     // Called once after isFinished returns true
     protected void end() {
         //Robot.gatherer.gatherStop();
-        Robot.gatherer.gathererAirStop();
-        System.out.println("Gatherer is calling the end method.");
+        //Robot.gatherer.gathererAirStop();
+        //System.out.println("Gatherer is calling the end method.");
     }
     /*
      * if the air pressure stops the system will print out "Gatherer is calling the
@@ -90,7 +97,7 @@ public class  MoveGathererUp extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-        while(Robot.gatherer.isBackGatherLimitNotPressed())
+        /*while(Robot.gatherer.isBackGatherLimitNotPressed())
         {
             Robot.gatherer.gathererGoUp();
             System.out.println("Front gather limit is not pressed.");
@@ -101,6 +108,6 @@ public class  MoveGathererUp extends Command {
          * "Front gather limit is not pressed"
          * AO 1/17/14
          */
-        end();
+        //end();
     }
 }
