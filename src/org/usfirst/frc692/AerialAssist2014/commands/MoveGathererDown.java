@@ -14,7 +14,6 @@ import org.usfirst.frc692.AerialAssist2014.Robot;
  *
  */
 public class  MoveGathererDown extends Command {
-    
     public MoveGathererDown() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -26,90 +25,25 @@ public class  MoveGathererDown extends Command {
     
     // Called just before this Command runs the first time
     protected void initialize() {
-        Robot.gatherer.gatherGo();
+        Robot.gatherer.gatherMotorGo();
+        Robot.gatherer.gathererGoDown();
     }
-    /*
-     * the gatherer will begin to go
-     * AO 1/7/14
-     */
     
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        if(Robot.gatherer.isFrontGatherLimitNotPressed())
-        {
-            Robot.gatherer.gathererGoDown();
-            System.out.println("Front limit is not pressed. Gatherer is moving back.");
-        }
-        /*
-         * if the front gather limit switch is not pressed the gatherer will go
-         * down and and the system will print out "Front limit is not pressed.
-         * Gatherer is moving back."
-         * AO 1/17/14
-         */
-        else
-        {
-            System.out.println("Gatherer is not moving.");
-        }
-        /*
-         * if the front gather limit switch is not pressed, then the system will
-         * print out "Gatherer is not moving"
-         * AO 1/17/14
-         */
     }
     
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(Robot.gatherer.isFrontGatherLimitPressed())
-        {
-            System.out.println("Front gather limit is pressed.");
-            return true;
-        }
-        /*
-         * if the front gather limit switch is pressed the system will print out 
-         * "Front gather limit is pressed." and the statement will become true
-         * AO 1/17/14
-         */
-        else
-        {
-            return false;
-        }
-        /*
-         * if the frontgather limit switch is not pressed then the statement will 
-         * be untrue
-         * AO 1/17/14
-         */
+        return true;
     }
     
     // Called once after isFinished returns true
     protected void end() {
-        Robot.gatherer.gatherStop();
-        System.out.println("Gatherer is calling the end method.");
-    }  
-    /*
-     * if the gatherer stops the system will print out "Gatherer is calling 
-     * the end method"
-     * AO 1/17/14
-     */
+    }
     
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-        while(Robot.gatherer.isFrontGatherLimitNotPressed())
-        {
-            Robot.gatherer.gathererGoDown();
-            Robot.gatherer.gatherStop();
-            System.out.println("Back gather limit is not pressed.");
-        }
-        /*
-         * if the front gather limit not pressed the gatherer will go down and 
-         * will stop and the system will print "Back gather limit is not pressed"
-         * AO 1/17/14
-         */
-        Robot.gatherer.gathererGoUp();
-        end();
     }
-    /*
-     * the gatherer will go up and the statement will end
-     * AO 1/17/14
-     */
 }
