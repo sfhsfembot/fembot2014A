@@ -48,7 +48,8 @@ public class AutonGroup extends CommandGroup {
         //addSequential(new AutonMoveForward());
         //AC 1/20/14
         addSequential(new AutonMoveForward());
-        addSequential(new ShootForwardAndBack());
+        addSequential(new ShooterGo());
+        //addSequential(new ShootForwardAndBack());
     }
     /*
      * robot moves forward about 36 inches then shoots the ball
