@@ -41,6 +41,9 @@ public class  AutonMoveForward extends Command {
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         if (Robot.driveTrain.bothLeftAndRightDistance() == 6.0)
+        //66 might mean the rotations so we should wait until we calibrate
+        //robot to change the value
+        //AC 1/25/14
         {
             return true;
         }
