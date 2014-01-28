@@ -28,6 +28,10 @@ public class  MoveGathererDown extends Command {
         Robot.gatherer.gatherMotorGo();
         Robot.gatherer.gathererGoDown();
     }
+    /*
+     * the gather motor will run then the gatherer arm will go down
+     * AO 1/27/14
+     */
     
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
