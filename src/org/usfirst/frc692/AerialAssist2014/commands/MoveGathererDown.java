@@ -25,7 +25,11 @@ public class  MoveGathererDown extends Command {
     
     // Called just before this Command runs the first time
     protected void initialize() {
-        Robot.gatherer.gatherMotorGo();
+        //Robot.gatherer.gatherMotorGo();
+        /*
+         * commented out to have a manual motor
+         * EV 1/28/14
+         */
         Robot.gatherer.gathererGoDown();
     }
     /*
