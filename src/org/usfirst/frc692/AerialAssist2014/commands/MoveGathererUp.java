@@ -27,7 +27,11 @@ public class  MoveGathererUp extends Command {
     protected void initialize() {
         //Robot.gatherer.gatherGo();
         Robot.gatherer.gathererGoUp();
-        Robot.gatherer.gatherMotorStop();
+        //Robot.gatherer.gatherMotorStop();
+        /*
+         * commented out to have a manual motor
+         * EV 1/28/14
+         */
     }
     /*
      * gatherer will move up, then the gatherer motor will stop
