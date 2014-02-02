@@ -12,7 +12,8 @@ import org.usfirst.frc692.AerialAssist2014.RobotMap;
 import org.usfirst.frc692.AerialAssist2014.commands.*;
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
-/**
+import edu.wpi.first.wpilibj.Compressor;
+        /**
  *
  */
 public class Pneumatics extends Subsystem {
@@ -37,5 +38,14 @@ public class Pneumatics extends Subsystem {
     /*
      * start the compressor to maintain 120 psi 
      * AO 1/18/14
+     */
+    
+    public void stopCompressor()
+    {
+        compressor1.stop();
+    }
+    /*
+     * stops compressor once the pressure is 120 psi
+     * AC 2/1/14
      */
 }
