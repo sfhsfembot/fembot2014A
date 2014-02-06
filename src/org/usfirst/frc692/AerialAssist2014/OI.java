@@ -92,7 +92,6 @@ public class OI {
         SmartDashboard.putData("DriveWithTwoJoystick", new DriveWithTwoJoystick());
         SmartDashboard.putData("LowShift", new LowShift());
         SmartDashboard.putData("HighShift", new HighShift());
-        SmartDashboard.putData("SendAir", new SendAir());
         SmartDashboard.putData("AutonGroup", new AutonGroup());
         SmartDashboard.putData("AutonMoveForward", new AutonMoveForward());
         SmartDashboard.putData("MoveGathererDown", new MoveGathererDown());
