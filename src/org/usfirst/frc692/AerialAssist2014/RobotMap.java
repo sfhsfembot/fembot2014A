@@ -76,10 +76,10 @@ public class RobotMap {
         shootershooterLimit = new DigitalInput(1, 2);
 	LiveWindow.addSensor("Shooter", "shooterLimit", shootershooterLimit);
         
-        gatherergathererMotor = new Victor(1, 7);
+        gatherergathererMotor = new Victor(1, 6);
 	LiveWindow.addActuator("Gatherer", "gathererMotor", (Victor) gatherergathererMotor);
         
-        gathererpasserPusher = new DoubleSolenoid(2, 1, 2);      
+        gathererpasserPusher = new DoubleSolenoid(1, 5, 6);      
 	
         
         gathererupAndDownGatherer = new DoubleSolenoid(1, 3, 4);      
