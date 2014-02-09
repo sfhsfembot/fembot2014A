@@ -36,11 +36,14 @@ public class ReadyToPass extends CommandGroup {
         // arm.
         
         addSequential(new MoveGathererDown());
+        addSequential(new WaitInput(1.0));
         addSequential(new PushBallToPass());
+        addSequential(new WaitInput(1.0));
+        addSequential(new PusherRetract());
     }
     /*
      * the gatherer arm moves down and then the piston propells the ball into 
-     * the gatherer 
+     * the gatherer and piston will retract
      * AO 1/28/14
      */
 }
