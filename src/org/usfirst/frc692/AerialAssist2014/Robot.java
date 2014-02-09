@@ -63,7 +63,7 @@ public class Robot extends IterativeRobot {
         //starts the compressor
         //AC 2/7/14
         
-        camera = AxisCamera.getInstance();
+        camera = AxisCamera.getInstance("10.6.92.11");
         //gets the image from the camera
         //AC 1/18/14
         camera.writeResolution(AxisCamera.ResolutionT.k320x240);
@@ -95,6 +95,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
+        
         Scheduler.getInstance().run();
         
         DriverStationLCD.getInstance().updateLCD();
