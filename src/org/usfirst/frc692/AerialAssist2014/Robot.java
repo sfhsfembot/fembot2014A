@@ -70,7 +70,7 @@ public class Robot extends IterativeRobot {
         //does not change brightness
         //AC 1/18/14
         camera.writeCompression(52);
-        
+            
     }
     public void autonomousInit() {
         // schedule the autonomous command (example)
