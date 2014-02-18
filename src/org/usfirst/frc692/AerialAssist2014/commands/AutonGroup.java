@@ -48,7 +48,7 @@ public class AutonGroup extends CommandGroup {
         //addSequential(new AutonMoveForward());
         //AC 1/20/14
         addSequential(new AutonMoveForward());
-        addSequential(new ShooterGo());
+        addSequential(new ShootGoAndReset());
         //addSequential(new ShootForwardAndBack());
     }
     /*
