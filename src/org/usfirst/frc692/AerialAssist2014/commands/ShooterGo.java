@@ -14,6 +14,7 @@ import org.usfirst.frc692.AerialAssist2014.Robot;
  *
  */
 public class  ShooterGo extends Command {
+    
     public ShooterGo() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -24,15 +25,12 @@ public class  ShooterGo extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        Robot.shooter.shooterMotorOneGo();
+        //Robot.shooter.shooterMotorOneGo();
     }
     
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        if(Robot.shooter.isShooterLimitNotPressed())
-        {
-            Robot.shooter.shooterMotorOneGo();
-        }
+        Robot.shooter.shooterMotorOneGo();
         //shooter will make one full rotation in order to release and go back to 
         //default position
         //AC 1/25/14
@@ -42,6 +40,7 @@ public class  ShooterGo extends Command {
     protected boolean isFinished() {
         if(Robot.shooter.isShooterLimitPressed())
         {
+            System.out.println("The limit switch is pressed.");
             return true;
         }
         else
