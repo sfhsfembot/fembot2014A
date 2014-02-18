@@ -110,7 +110,7 @@ public class Gatherer extends Subsystem {
     
     public void gathererGoUp()
     {
-        upAndDownGatherer.set(DoubleSolenoid.Value.kReverse);
+        upAndDownGatherer.set(DoubleSolenoid.Value.kForward);
     }
     /*
      * the double solenoid of the gatherer 
@@ -120,7 +120,7 @@ public class Gatherer extends Subsystem {
     
     public void gathererGoDown()
     {
-        upAndDownGatherer.set(DoubleSolenoid.Value.kForward);
+        upAndDownGatherer.set(DoubleSolenoid.Value.kReverse);
     }
     /*
      * the double solenoid of the gatherer pushes air to the 
