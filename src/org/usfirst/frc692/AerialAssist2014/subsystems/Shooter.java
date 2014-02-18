@@ -35,18 +35,6 @@ public class Shooter extends Subsystem {
     public void shooterMotorOneGo() {
         shooterMotor1.set(1.0);
     }
-    public boolean isShooterLimitNotPressed()
-    {
-        boolean y = shooterLimit.get();
-        return !y;
-        // will run the code if the switch is not pressed
-        //AC 1/14/14
-    }
-    /*
-     * set the rotation value to -1.0 for shooterMotor1 so that it would turn 
-     * counterclockwise 
-     * AO 1/14/14
-     */
     
     /*
     public void shooterMotorOneGo(double speed) {
@@ -88,28 +76,28 @@ public class Shooter extends Subsystem {
     
     public boolean isShooterLimitPressed()
     {
-        boolean x = shooterLimit.get();
+        if (shooterLimit.get() == false)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
         // .get() means that the code will run if the limit is pressed -- add
         // return !x for it to run when not pressed
         // AC 1/14/14
-        return x;
         // checks to see when the shooter limit is pressed
         // AC 1/14/14
     }
     
+    /*
+    private static final int checkLimitSwitch = 0;
+    private int limitSwitchState;
     
-    /*public boolean isBackShooterLimitPressed()
+    public void readyToShoot()
     {
-        boolean z = backLimitShooterSwitch.get();
-        return z;
-    }
-    public boolean isBackLimitShooterNotPressed()
-    {
-        boolean u = backLimitShooterSwitch.get();
-        return !u;
+        limitSwitchState = checkLimitSwitch;
     }
     */
-    //commented out other limit switches because we only need one for the
-    //choo choo mechanism
-    //AC 1/25/14
 }
