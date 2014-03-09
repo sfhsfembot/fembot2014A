@@ -29,6 +29,7 @@ public class  PassLimitSwitch extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         Robot.shooter.shooterMotorOneGo();
+        System.out.println("Shooter has passed the limit switch!");               
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
