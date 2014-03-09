@@ -74,6 +74,7 @@ public class Robot extends IterativeRobot {
         camera.writeCompression(52);
         Robot.pneumaticsForDrive.lowGear();
         Robot.gatherer.gathererGoUp();
+        Robot.gatherer.pusherGoBack();
             
     }
     public void autonomousInit() {
