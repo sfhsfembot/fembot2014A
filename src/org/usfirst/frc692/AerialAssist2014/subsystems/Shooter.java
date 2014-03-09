@@ -78,10 +78,12 @@ public class Shooter extends Subsystem {
     {
         if (shooterLimit.get() == false)
         {
+            System.out.println("Limit switch is pressed.");
             return true;
         }
         else
         {
+            System.out.println("Limit switch is not pressed.");
             return false;
         }
         // .get() means that the code will run if the limit is pressed -- add
