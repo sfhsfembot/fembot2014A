@@ -91,6 +91,9 @@ public class Shooter extends Subsystem {
         // AC 1/14/14
         // checks to see when the shooter limit is pressed
         // AC 1/14/14
+        //NOTE - WRITE WHETHER THE LIMIT SWITCH IS NORMALLY OPEN OR NORMALLY
+        //CLOSED
+        //AC 3/10/14
     }
     
     /*
