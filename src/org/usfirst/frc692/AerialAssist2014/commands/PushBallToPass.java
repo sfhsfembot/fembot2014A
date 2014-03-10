@@ -24,7 +24,7 @@ public class  PushBallToPass extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        Robot.gatherer.pushBallToPass();
+        Robot.pneumaticsForPasserPusher.pushBallToPass();
     }
     /*
      * the piston will get air and propell the ball to the bumper and than the 
