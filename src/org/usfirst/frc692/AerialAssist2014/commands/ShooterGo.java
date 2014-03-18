@@ -25,12 +25,12 @@ public class  ShooterGo extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        //Robot.shooter.shooterMotorOneGo();
+        Robot.shooter.shooterMotorOneGo();
     }
     
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.shooter.shooterMotorOneGo();
+        //Robot.shooter.shooterMotorOneGo();
         //shooter will make one full rotation in order to release and go back to 
         //default position
         //AC 1/25/14
