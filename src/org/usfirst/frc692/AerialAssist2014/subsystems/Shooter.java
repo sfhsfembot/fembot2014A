@@ -74,6 +74,9 @@ public class Shooter extends Subsystem {
     //mechanism
     //AC 1/25/14
     
+    
+    //NOrmally oPEN 
+    //AC 3/14/14s
     public boolean isShooterLimitPressed()
     {
         if (shooterLimit.get() == false)
@@ -90,10 +93,11 @@ public class Shooter extends Subsystem {
         // return !x for it to run when not pressed
         // AC 1/14/14
         // checks to see when the shooter limit is pressed
-        // AC 1/14/14
-        //NOTE - WRITE WHETHER THE LIMIT SWITCH IS NORMALLY OPEN OR NORMALLY
-        //CLOSED
+        // AC 1/14/14        
+        //NOTE CHECK TO SEE IF NC OR NO
         //AC 3/10/14
+        //UPDATE : NORMALLY OPEN
+        //AC 3/14/14
     }
     
     /*
