@@ -42,9 +42,9 @@ public class  MoveGathererUp extends Command {
     protected void execute() {
         //if(Robot.gatherer.isBackGatherLimitNotPressed())
         {
-            Robot.gatherer.gathererGoUp();
+            //Robot.gatherer.gathererGoUp();
             //Robot.gatherer.gatherGo();
-            System.out.println("Back limit is not pressed; the gatherer is moving forward");
+            //System.out.println("Back limit is not pressed; the gatherer is moving forward");
         }
         /*
          * if the gatherer back limit switch is not pressed the gatherer will go up and 
