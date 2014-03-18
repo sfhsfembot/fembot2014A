@@ -107,4 +107,9 @@ public class DriveTrain extends Subsystem {
     }
     //left and right encoders will stop counting revolutions
     //AC 1/23/14
+    public void autonMoveForward()
+    {
+        robotDrive.drive(0.6, 0);
+    }
+    
 }
