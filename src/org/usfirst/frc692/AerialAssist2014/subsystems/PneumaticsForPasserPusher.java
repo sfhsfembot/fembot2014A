@@ -30,7 +30,7 @@ public class PneumaticsForPasserPusher extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
-        public void pushBallToPass()
+    public void pushBallToPass()
     {
         passerPusher.set(DoubleSolenoid.Value.kForward);
     }
