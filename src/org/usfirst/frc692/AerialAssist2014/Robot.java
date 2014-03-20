@@ -75,7 +75,7 @@ public class Robot extends IterativeRobot {
         camera.writeBrightness(50);
         //does not change brightness
         //AC 1/18/14
-        camera.writeCompression(52);
+        //camera.writeCompression(52);
          
         Robot.pneumaticsForDrive.lowGear();
         Robot.gatherer.gathererGoUp();
