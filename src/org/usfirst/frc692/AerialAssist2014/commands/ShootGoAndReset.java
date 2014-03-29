@@ -35,7 +35,8 @@ public class ShootGoAndReset extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
         addSequential(new PassLimitSwitch());
-        addSequential(new WaitInput(0.5));
+        addSequential(new WaitInput(0.1));
+        addParallel(new MoveGathererUp());
         addSequential(new ShooterGo());
         
     }
