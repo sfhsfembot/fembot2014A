@@ -75,7 +75,7 @@ public class Robot extends IterativeRobot {
         camera.writeBrightness(50);
         //does not change brightness
         //AC 1/18/14
-        //camera.writeCompression(52);
+        camera.writeCompression(52);
          
         Robot.pneumaticsForDrive.lowGear();
         Robot.gatherer.gathererGoUp();
@@ -83,7 +83,9 @@ public class Robot extends IterativeRobot {
     }
     public void autonomousInit() {
         // schedule the autonomous command (example)
-        if (autonomousCommand != null) autonomousCommand.start();
+        if (autonomousCommand != null){
+            autonomousCommand.start();
+        }
     }
     /**
      * This function is called periodically during autonomous
@@ -97,7 +99,7 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-        if (autonomousCommand != null) autonomousCommand.cancel();
+        if (autonomousCommand != null) {autonomousCommand.cancel();}
     }
     /**
      * This function is called periodically during operator control
